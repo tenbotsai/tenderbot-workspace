@@ -1,6 +1,9 @@
 # TenderBot Product Roadmap
 
-This roadmap tracks implemented features and outlines upcoming work for TenderBot. Each feature links to a detailed specification document.
+This roadmap tracks TenderBot's development status and upcoming work.
+
+**Completed work** is documented in feature specs (`/features/`)
+**Current and future work** is tracked in stories (`/stories/`)
 
 Last updated: 2026-02-07
 
@@ -8,21 +11,18 @@ Last updated: 2026-02-07
 
 ## 🎯 Current Status Overview
 
-**Phase 1: MVP Core Features** - ✅ **COMPLETE** (January 2026)
+**MVP Core Features** - ✅ **COMPLETE** (January 2026)
 - All essential functionality for first paying customers is live
-- Backend ingestion, matching, and email delivery operational
-- Frontend onboarding and dashboard fully functional
-- Stripe billing integrated
+- Backend: Find a Tender ingestion, AI matching, email delivery, Prefect workflows
+- Frontend: Conversational onboarding, dashboard with 5 tabs, Auth0 + Stripe integration
+- See Phase 1 section below for full feature list
 
-**Phase 2: Enhancement & Scale** - 🚧 **IN PROGRESS** (Q1 2026)
-- Improving matching quality and user controls
-- Adding export capabilities
-- Expanding data sources
-
-**Phase 3: Growth Features** - 📋 **PLANNED** (Q2-Q3 2026)
-- Advanced analytics and insights
-- Team/organization features
-- Integration ecosystem
+**Current Focus** - 🚧 **Q1 2026**
+- Fix matching quality issues (CPV code reliability)
+- Add comprehensive testing (onboarding, dashboard, E2E)
+- Set up staging environment
+- Integrate email provider for live alerts
+- See story list below for details
 
 ---
 
@@ -66,70 +66,73 @@ Last updated: 2026-02-07
 
 ---
 
-## 🚧 Phase 2: Enhancement & Scale (Q1 2026)
+## 🎯 Current Work (Stories)
 
-### 2.1 Data Source Expansion
-- [ ] [Contracts Finder API Integration](./features/contracts-finder.md) - 🔜 NEXT UP
-- [ ] [Scotland Public Contracts](./features/scotland-contracts.md) - 📋 PLANNED
-- [ ] [TED (Tenders Electronic Daily)](./features/ted-integration.md) - 📋 PLANNED
+**We use a story-based system for tracking work.** See `/stories/` directory for all stories.
 
-### 2.2 Matching Improvements
-- [ ] [Multi-Alert Profile Support](./features/multi-alert.md) - 🔜 NEXT UP
-- [ ] [Advanced Filters (Value, Region, Buyer Type)](./features/advanced-filters.md) - 📋 PLANNED
-- [ ] [Alert Profile Templates](./features/alert-templates.md) - 📋 PLANNED
-- [ ] [Match Quality Feedback Loop](./features/feedback-loop.md) - 📋 PLANNED
+Stories move through: `unrefined` → `refined` → `in-progress` → `done`
 
-### 2.3 Export & Integration
-- [ ] [Export to Excel/CSV](./features/export-excel.md) - 🔜 NEXT UP
-- [ ] [Google Sheets Integration](./features/google-sheets.md) - 📋 PLANNED
-- [ ] [Slack Notifications](./features/slack-integration.md) - 📋 PLANNED
-- [ ] [Zapier Integration](./features/zapier.md) - 📋 PLANNED
+### High Priority Stories (Unrefined)
 
-### 2.4 User Experience Enhancements
-- [ ] [Alert Profile Editing](./features/alert-editing.md) - 🟡 IN PROGRESS
-- [ ] [Tender Detail Page](./features/tender-detail.md) - 📋 PLANNED
-- [ ] [Search & Filter Dashboard](./features/dashboard-search.md) - 📋 PLANNED
-- [ ] [Email Notification Preferences](./features/notification-preferences.md) - 📋 PLANNED
+**[#001: Keyword Extraction for Better Matching](./stories/unrefined/001-keyword-extraction-matching.md)**
+- Extract keywords from tenders using LLM batch API
+- Addresses CPV code reliability issues (mis-categorization, broad categories)
+- Requires careful design - large feature
+
+**[#003: Comprehensive Testing Strategy](./stories/unrefined/003-comprehensive-testing-strategy.md)**
+- Full test coverage for onboarding and dashboard
+- Mock LLM responses and Auth0 for automated testing
+- Needs staging environment (#004)
+
+**[#004: Staging Environment](./stories/unrefined/004-staging-environment.md)**
+- Set up staging for E2E testing
+- Separate deployments for backend/frontend/database
+- Unblocks comprehensive testing
+
+**[#005: Email Provider Integration](./stories/unrefined/005-email-provider-integration.md)**
+- Integrate email provider API (Resend/SendGrid/AWS SES)
+- Emails not currently going out - blocking user value
+- DNS setup (SPF, DKIM), bounce handling
+
+### Medium Priority Stories (Unrefined)
+
+**[#002: Relevance Scoring Improvements](./stories/unrefined/002-relevance-scoring-improvements.md)**
+- Define explicit LLM scoring rubric
+- Consider user preference controls (geography vs content weight)
+- Improve match quality transparency
+
+**[#006: Automated Email Testing](./stories/unrefined/006-automated-email-testing.md)**
+- Visual regression tests for email rendering
+- Test across email clients
+- Enhance CLI preview tool
+
+**[#007: Improve Match Descriptions](./stories/unrefined/007-improve-match-descriptions.md)**
+- Generate specific relevance explanations
+- Highlight matched keywords/categories
+- Replace generic "matches your category" text
+
+**[#009: Preserve Onboarding Chat History](./stories/unrefined/009-preserve-onboarding-chat-history.md)**
+- Fix bug: chat history wiped after auth redirect
+- Extend sessionStorage to include message history
+- Maintain conversation continuity
+
+### Low Priority Stories (Unrefined)
+
+**[#008: Fix Logo Rendering](./stories/unrefined/008-fix-logo-rendering.md)**
+- Visual bug: logo doesn't match prototype
+- Quick fix once investigated
 
 ---
 
-## 📋 Phase 3: Growth Features (Q2-Q3 2026)
+## 📝 Story Management
 
-### 3.1 Analytics & Insights
-- [ ] [Tender Analytics Dashboard](./features/analytics.md) - 📋 PLANNED
-- [ ] [Market Insights Report](./features/market-insights.md) - 📋 PLANNED
-- [ ] [Competitor Tracking](./features/competitor-tracking.md) - 📋 PLANNED
+All active work is tracked in `/stories/`. See [stories/README.md](./stories/README.md) for:
+- How to work with stories
+- Refinement process
+- Status definitions
+- Prioritization criteria
 
-### 3.2 Team & Organization Features
-- [ ] [Team Workspaces](./features/team-workspaces.md) - 📋 PLANNED
-- [ ] [Shared Alert Profiles](./features/shared-alerts.md) - 📋 PLANNED
-- [ ] [Trade Association Feeds](./features/association-feeds.md) - 📋 PLANNED
-- [ ] [Role-Based Access Control](./features/rbac.md) - 📋 PLANNED
-
-### 3.3 Advanced Capabilities
-- [ ] [AI Bid Advisor](./features/bid-advisor.md) - 📋 PLANNED
-- [ ] [Win Rate Predictions](./features/win-predictions.md) - 📋 PLANNED
-- [ ] [Document Analysis](./features/document-analysis.md) - 📋 PLANNED
-- [ ] [Calendar Integration](./features/calendar-sync.md) - 📋 PLANNED
-
-### 3.4 Platform Expansion
-- [ ] [Mobile App (iOS/Android)](./features/mobile-app.md) - 📋 PLANNED
-- [ ] [API for Third-Party Integrations](./features/public-api.md) - 📋 PLANNED
-- [ ] [White-Label Solution](./features/white-label.md) - 📋 PLANNED
-
----
-
-## 🔧 Technical Debt & Infrastructure
-
-### High Priority
-- [ ] [Improve Test Coverage](./features/testing.md) - 📋 PLANNED
-- [ ] [Performance Optimization](./features/performance.md) - 📋 PLANNED
-- [ ] [Error Monitoring & Alerting](./features/monitoring.md) - 📋 PLANNED
-
-### Medium Priority
-- [ ] [Database Migration to RDS](./features/db-migration.md) - 📋 PLANNED
-- [ ] [CDN for Static Assets](./features/cdn.md) - 📋 PLANNED
-- [ ] [Rate Limiting & DDoS Protection](./features/rate-limiting.md) - 📋 PLANNED
+**For coding agents:** Stories in `/stories/refined/` are ready for implementation with full context.
 
 ---
 
