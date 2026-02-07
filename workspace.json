@@ -1,0 +1,25 @@
+{
+  "repos": {
+    "backend": {
+      "url": "git@github.com:tenbotsai/backend.git",
+      "branch": "main",
+      "description": "FastAPI backend with Prefect workers"
+    },
+    "signup": {
+      "url": "git@github.com:tenbotsai/signup.git",
+      "branch": "main",
+      "description": "Next.js frontend for TenderBot",
+      "notes": "No remote configured yet - update URL when pushed to GitHub"
+    },
+    "remix-of-tenderbot-prototype": {
+      "url": "git@github.com:tenbotsai/remix-of-tenderbot-prototype.git",
+      "branch": "main",
+      "description": "Lovable.dev prototype - reference for UI/UX",
+      "notes": "No remote configured yet - update URL when pushed to GitHub"
+    }
+  },
+  "workspace": {
+    "name": "TenderBot Development",
+    "description": "Parent workspace for TenderBot business context and multi-repo coordination"
+  }
+}

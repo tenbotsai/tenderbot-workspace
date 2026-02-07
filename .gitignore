@@ -1,0 +1,17 @@
+# Ignore child git repositories
+/backend/
+/signup/
+/remix-of-tenderbot-prototype/
+
+# Keep cache/build artifacts out
+.ruff_cache/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
