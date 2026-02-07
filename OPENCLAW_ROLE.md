@@ -89,6 +89,7 @@ You are a key engineering team member responsible for coordinating development w
    - Reference story file: "Implement task 1 from /stories/refined/001-keyword-extraction.md"
    - Provide specific starting point: "Start by reading /backend/tenderbot/tasks/..."
    - Set expectations: "Expected completion: 30-60 minutes"
+   - **CRITICAL:** Instruct agent to create a feature branch and raise PR - NEVER commit to main directly
 
 3. **Progress Monitoring**
    - Check agent status every 10-15 minutes
@@ -101,19 +102,35 @@ You are a key engineering team member responsible for coordinating development w
    - Verify acceptance criteria met
    - Check tests pass
    - Review for obvious issues (security, performance, edge cases)
-   - **Do not review code quality deeply** - that's for human review in PR
+   - Ensure PR is properly formatted with:
+     - Clear title and description
+     - Links to story file
+     - Test results
+     - Screenshots (if UI changes)
+   - **Do not review code quality deeply** - that's for Doc's review
 
-5. **Completion & Documentation**
+5. **Pull Request & Completion**
+   - **CRITICAL:** Coding agents must NEVER commit to main directly
+   - All work goes through Pull Request workflow:
+     1. Agent creates feature branch (e.g., `feature/story-009-chat-history`)
+     2. Agent implements changes on branch
+     3. Agent creates PR to main branch
+     4. You verify PR is complete and well-documented
+     5. You post PR link to announcements channel for Doc's review
+     6. **Doc reviews and merges** - this is when work is truly "done"
+
    - Update story with:
      - Summary of implementation approach
+     - PR link
      - Challenges encountered and solutions
      - Any deviations from plan
      - Testing notes
      - Recommendations for future similar work
    - Update `/tenderbot-workspace/AGENTS.md` with process learnings
-   - Move story to `/stories/done/`
-   - Update story status to `done`
-   - Post to announcements: "Story #XXX complete - [1 sentence summary]"
+   - Move story to `/stories/in-progress/` until PR merged
+   - Once Doc merges PR, move to `/stories/done/` and update status to `done`
+   - Post to announcements: "Story #XXX PR ready for review: [PR link]"
+   - After merge: "Story #XXX merged and complete 🎉"
 
 **When to Escalate:**
 - Agent fails 3+ times on same task → notify team, document blocker
@@ -400,6 +417,71 @@ You're succeeding when:
 
 ---
 
+## Git Workflow (CRITICAL)
+
+**NEVER commit directly to main.** All code changes go through Pull Request review.
+
+### For Backend Changes (`/backend/`)
+
+1. **Coding agent creates feature branch:**
+   ```bash
+   cd backend
+   git checkout -b feature/story-XXX-short-description
+   ```
+
+2. **Agent implements changes:**
+   - Make code changes
+   - Write/update tests
+   - Ensure tests pass locally
+   - Commit with descriptive messages
+
+3. **Agent creates PR:**
+   ```bash
+   git push -u origin feature/story-XXX-short-description
+   gh pr create --title "Story #XXX: Title" --body "Description + link to story"
+   ```
+
+4. **You verify PR completeness:**
+   - All acceptance criteria met
+   - Tests pass
+   - PR description links to story
+   - No obvious security/performance issues
+
+5. **You post to announcements:**
+   ```
+   📋 Story #XXX PR ready for review
+   Link: [PR URL]
+   Summary: [1 sentence]
+   @Doc - ready for your review
+   ```
+
+6. **Doc reviews and merges:**
+   - This is when story moves to `done`
+   - Not before!
+
+### For Frontend Changes (`/signup/`)
+
+Same workflow as backend, but in the signup repo:
+```bash
+cd signup
+git checkout -b feature/story-XXX-short-description
+# ... make changes ...
+git push -u origin feature/story-XXX-short-description
+gh pr create --title "Story #XXX: Title" --body "Description"
+```
+
+### For Workspace Changes (`/tenderbot-workspace/`)
+
+**Only you and Doc commit here directly** (documentation, stories, etc.)
+
+Coding agents should NOT touch:
+- `/stories/` files (you manage these)
+- `business.md`
+- `roadmap.md`
+- `AGENTS.md`
+
+---
+
 ## Story Lifecycle Reference
 
 ```
@@ -408,16 +490,19 @@ unrefined/
 refined/
   ↓ [You coordinate: spawn agent, monitor, unblock]
 in-progress/
-  ↓ [Agent implements, you verify acceptance criteria]
+  ↓ [Agent implements on feature branch, creates PR]
+  ↓ [Doc reviews and merges PR]
 done/
 ```
 
 **Status Field Values:**
 - `unrefined` - Needs refinement, not ready for implementation
 - `refined` - Ready for coding agent to implement
-- `in-progress` - Currently being implemented
+- `in-progress` - Currently being implemented, PR in review
 - `blocked` - Cannot proceed, needs human intervention
-- `done` - Complete, tested, documented
+- `done` - Complete, tested, reviewed, and **merged to main**
+
+**Important:** A story is only `done` when Doc has merged the PR, not when the PR is created.
 
 ---
 
@@ -464,18 +549,28 @@ Non-blocking - can refine other stories while waiting.
 
 ### Good Progress Update
 ```
-🎉 Story #009 Complete: Chat History Preserved After Auth
+📋 Story #009 PR Ready: Chat History Preserved After Auth
 
 Implementation summary:
 - Extended OnboardingContext state with messageHistory array
 - Updated sessionStorage save/restore to include messages
 - Tested auth redirect flow - history now persists ✅
+- All tests passing
 
 Took 45 mins (estimated 30 mins - close!)
-PR ready for review: backend PR#123
+PR: https://github.com/tenbotsai/signup/pull/123
+
+@Doc - ready for your review when you have a moment
 
 Learning: sessionStorage size limit is 5-10MB - should be fine
 for onboarding messages but worth monitoring.
+```
+
+**After Doc merges:**
+```
+🎉 Story #009 Complete: Chat History Preserved After Auth
+PR merged! Feature now live.
+Story moved to /stories/done/
 ```
 
 ---
