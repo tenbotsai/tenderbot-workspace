@@ -1,7 +1,7 @@
 ---
 id: 010
 title: Frontend Testing Foundation with Vitest
-status: refined
+status: done
 priority: high
 labels: [testing, frontend, vitest]
 estimate: medium
