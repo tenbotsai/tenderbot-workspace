@@ -87,6 +87,7 @@ So that [benefit].
 2. **Getting context**: Read the entire story file for complete context
 3. **Asking questions**: If story is unrefined, ask for refinement before implementing
 4. **Updating status**: Update the story file as you progress through implementation
+5. **Execution workflow**: Follow `stories/CODING_AGENT_EXECUTION_PROTOCOL.md` for ticket selection, implementation flow, PR handoff, and blocker escalation
 
 ## Current Stories
 
@@ -94,17 +95,25 @@ So that [benefit].
 
 1. **001-keyword-extraction-matching.md** - Extract keywords from tenders using LLM batch API for better matching
 2. **002-relevance-scoring-improvements.md** - Improve LLM scoring instructions and potentially add user controls
-3. **003-comprehensive-testing-strategy.md** - Add full test coverage for onboarding and dashboard with mocking strategy
-4. **004-staging-environment.md** - Set up staging environment for safe E2E testing
-5. **005-email-provider-integration.md** - Integrate email provider API (Resend/SendGrid/etc) to send alerts
-6. **006-automated-email-testing.md** - Automated visual regression tests for email rendering
-7. **007-improve-match-descriptions.md** - Generate specific relevance explanations instead of generic summaries
-8. **008-fix-logo-rendering.md** - Fix logo to match prototype appearance
-9. **009-preserve-onboarding-chat-history.md** - Preserve chat messages across auth redirect
+3. **004-staging-environment.md** - Set up staging environment for safe E2E testing
+4. **005-email-provider-integration.md** - Integrate email provider API (Resend/SendGrid/etc) to send alerts
+5. **006-automated-email-testing.md** - Automated visual regression tests for email rendering
+6. **007-improve-match-descriptions.md** - Generate specific relevance explanations instead of generic summaries
+7. **008-fix-logo-rendering.md** - Fix logo to match prototype appearance
+8. **009-preserve-onboarding-chat-history.md** - Preserve chat messages across auth redirect
+9. **018-staging-e2e-contract-smoke-suite.md** - Add staging smoke checks for cross-system onboarding/billing/dashboard contracts
 
-### Refined (0)
+### Refined (9)
 
-None yet - stories need refinement
+1. **003-comprehensive-testing-strategy.md** - Parent epic with FE Vitest-first scope and sequencing
+2. **010-fe-testing-foundation-vitest.md** - Shared FE test utilities, fixtures, and mocking baseline
+3. **011-fe-onboarding-steps-1-5-vitest.md** - Implementation-ready Vitest coverage for onboarding early steps
+4. **012-fe-onboarding-steps-6-7-billing-vitest.md** - Implementation-ready coverage for onboarding completion and billing redirects
+5. **013-fe-dashboard-tabs-vitest.md** - Implementation-ready coverage for dashboard tab behavior
+6. **014-be-onboarding-api-contract-tests.md** - Contract tests for backend onboarding API chain used by FE
+7. **015-be-billing-checkout-confirmation-contract-tests.md** - Contract tests for billing checkout, confirm, status, and webhook behavior
+8. **016-be-dashboard-api-contract-tests.md** - Contract tests for dashboard-facing backend endpoints
+9. **017-be-test-fixtures-and-integration-harness-hardening.md** - Shared backend test fixtures and harness reliability improvements
 
 ### In Progress (0)
 
