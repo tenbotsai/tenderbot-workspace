@@ -1,12 +1,12 @@
 ---
 id: 017
 title: Backend Test Fixtures and Integration Harness Hardening
-status: in-progress
+status: done
 priority: medium
 labels: [testing, backend, fixtures, reliability]
 estimate: medium
 created: 2026-02-11
-updated: 2026-02-11
+updated: 2026-02-12
 ---
 
 # User Story
@@ -27,10 +27,10 @@ Introduce reusable fixture factories and helper utilities for customer/profile/b
 
 # Acceptance Criteria
 
-- [ ] Shared test factories exist for common entities (customer, alert profile, billing subscription, tender match, delivery history)
-- [ ] At least three existing backend test modules are migrated to shared fixtures
-- [ ] Test helpers reduce duplicated setup logic without changing behavior
-- [ ] No regression in backend test results (`mise run test`)
+- [x] Shared test factories exist for common entities (customer, alert profile, billing subscription, tender match, delivery history)
+- [x] At least three existing backend test modules are migrated to shared fixtures
+- [x] Test helpers reduce duplicated setup logic without changing behavior
+- [x] No regression in backend test results (`mise run test`)
 
 # Technical Context
 

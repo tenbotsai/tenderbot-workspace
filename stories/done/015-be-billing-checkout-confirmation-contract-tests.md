@@ -1,12 +1,12 @@
 ---
 id: 015
 title: Backend Billing Checkout and Confirmation Contract Tests
-status: in-progress
+status: done
 priority: high
 labels: [testing, backend, billing, api, contract]
 estimate: medium
 created: 2026-02-11
-updated: 2026-02-11
+updated: 2026-02-12
 ---
 
 # User Story
@@ -29,12 +29,12 @@ Consolidate and expand billing router contract tests for:
 
 # Acceptance Criteria
 
-- [ ] `/billing/checkout` covers success, `already_subscribed` conflict, and generic failure paths
-- [ ] `/billing/checkout/confirm` covers active/trialing success and payment_incomplete behavior
-- [ ] `/billing/status` covers active and empty/non-active subscription states
-- [ ] Webhook contract tests cover signature/invalid payload handling and key event paths
-- [ ] Error contract shape (`detail`) and status codes are explicitly asserted
-- [ ] Tests pass in backend test workflow
+- [x] `/billing/checkout` covers success, `already_subscribed` conflict, and generic failure paths
+- [x] `/billing/checkout/confirm` covers active/trialing success and payment_incomplete behavior
+- [x] `/billing/status` covers active and empty/non-active subscription states
+- [x] Webhook contract tests cover signature/invalid payload handling and key event paths
+- [x] Error contract shape (`detail`) and status codes are explicitly asserted
+- [x] Tests pass in backend test workflow
 
 # Technical Context
 
