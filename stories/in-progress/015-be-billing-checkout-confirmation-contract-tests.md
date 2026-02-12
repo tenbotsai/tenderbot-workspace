@@ -1,7 +1,7 @@
 ---
 id: 015
 title: Backend Billing Checkout and Confirmation Contract Tests
-status: refined
+status: in-progress
 priority: high
 labels: [testing, backend, billing, api, contract]
 estimate: medium
