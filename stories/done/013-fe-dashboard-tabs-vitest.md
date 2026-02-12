@@ -1,7 +1,7 @@
 ---
 id: 013
 title: Vitest Coverage for Dashboard Tab Flows
-status: refined
+status: done
 priority: high
 labels: [testing, frontend, vitest, dashboard]
 estimate: medium

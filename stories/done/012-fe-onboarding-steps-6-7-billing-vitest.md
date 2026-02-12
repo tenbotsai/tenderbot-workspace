@@ -1,7 +1,7 @@
 ---
 id: 012
 title: Vitest Coverage for Onboarding Steps 6-7 and Billing Redirects
-status: refined
+status: done
 priority: high
 labels: [testing, frontend, vitest, onboarding, billing]
 estimate: medium

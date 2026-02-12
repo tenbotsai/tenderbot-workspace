@@ -1,7 +1,7 @@
 ---
 id: 017
 title: Backend Test Fixtures and Integration Harness Hardening
-status: refined
+status: in-progress
 priority: medium
 labels: [testing, backend, fixtures, reliability]
 estimate: medium

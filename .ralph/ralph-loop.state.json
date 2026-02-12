@@ -1,0 +1,13 @@
+{
+  "active": true,
+  "iteration": 1,
+  "minIterations": 1,
+  "maxIterations": 10,
+  "completionPromise": "COMPLETE",
+  "tasksMode": false,
+  "taskPromise": "READY_FOR_NEXT_TASK",
+  "prompt": "I want you to pick up all refined tickets one by one and work through each one. \n\nFlow: \n1. Pick up the next available ticket following the instructions in AGENTS.md\n2. Implement it\n3. Raise PR\n4. Ensure CI checks are passing\n5. Merge PR\n6. Repeat until there are no more refined tickets left\n\nNote: The next available ticket priority is \"in-progress\" and then \"refined\"\n\nRules:\n- You must keep working teneciously until all the refined tickets are done. Do not stop. No exceptions. \n\nOutput <promise>COMPLETE</promise> when done.\n",
+  "startedAt": "2026-02-12T12:47:46.663Z",
+  "model": "",
+  "agent": "opencode"
+}

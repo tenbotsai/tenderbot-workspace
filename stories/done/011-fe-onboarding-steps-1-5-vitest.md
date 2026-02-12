@@ -1,7 +1,7 @@
 ---
 id: 011
 title: Vitest Coverage for Onboarding Steps 1-5
-status: refined
+status: done
 priority: high
 labels: [testing, frontend, vitest, onboarding]
 estimate: medium
