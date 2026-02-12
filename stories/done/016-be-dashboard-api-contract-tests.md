@@ -1,12 +1,12 @@
 ---
 id: 016
 title: Backend Dashboard API Contract Tests
-status: refined
+status: done
 priority: high
 labels: [testing, backend, dashboard, api, contract]
 estimate: medium
 created: 2026-02-11
-updated: 2026-02-11
+updated: 2026-02-12
 ---
 
 # User Story
@@ -32,12 +32,12 @@ Add backend API contract tests focused on response shapes, auth behavior, pagina
 
 # Acceptance Criteria
 
-- [ ] Contract tests cover all dashboard endpoints in scope
-- [ ] Response payload keys/types used by FE tabs are asserted
-- [ ] Auth/permission failure behavior is asserted where applicable
-- [ ] Delivery history pagination (`limit`, `offset`) contract is asserted
-- [ ] Preview endpoint contract covers found/not-found/error paths
-- [ ] Tests pass in backend test workflow
+- [x] Contract tests cover all dashboard endpoints in scope
+- [x] Response payload keys/types used by FE tabs are asserted
+- [x] Auth/permission failure behavior is asserted where applicable
+- [x] Delivery history pagination (`limit`, `offset`) contract is asserted
+- [x] Preview endpoint contract covers found/not-found/error paths
+- [x] Tests pass in backend test workflow
 
 # Technical Context
 

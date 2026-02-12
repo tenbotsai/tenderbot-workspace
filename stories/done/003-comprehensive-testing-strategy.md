@@ -1,12 +1,12 @@
 ---
 id: 003
 title: Testing Strategy Epic for Onboarding and Dashboard
-status: refined
+status: done
 priority: high
 labels: [testing, frontend, vitest, planning]
 estimate: medium
 created: 2026-02-07
-updated: 2026-02-11
+updated: 2026-02-12
 ---
 
 # User Story
@@ -40,11 +40,11 @@ Run testing delivery in phases with explicit boundaries.
 
 # Acceptance Criteria
 
-- [ ] Stories #010, #011, #012, and #013 are in `stories/refined/` with `status: refined`
-- [ ] Each child story contains resolved technical decisions and implementation tasks (<1 hour each)
-- [ ] FE testing scope is explicitly Vitest-only (no Playwright work)
-- [ ] Backend API testing and staging E2E are documented as follow-on scope
-- [ ] Implementation order and dependencies across child stories are explicit
+- [x] Stories #010, #011, #012, and #013 were delivered through the lifecycle and are now completed in `stories/done/`
+- [x] Each child story contains resolved technical decisions and implementation tasks (<1 hour each)
+- [x] FE testing scope is explicitly Vitest-only (no Playwright work)
+- [x] Backend API testing and staging E2E are documented as follow-on scope
+- [x] Implementation order and dependencies across child stories are explicit
 
 # Technical Context
 
@@ -98,4 +98,4 @@ Run testing delivery in phases with explicit boundaries.
 
 # Notes
 
-This story is intentionally a refined parent epic, not a coding task. Coding agents should implement from Stories #010-#013.
+This story is intentionally a planning parent epic, not a coding task. Coding agents should implement from Stories #010-#013.

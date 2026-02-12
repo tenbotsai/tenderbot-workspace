@@ -18,12 +18,16 @@ Choose the next story from `stories/refined/` using:
 3. Smaller estimate first when same priority
 4. Lowest story ID as tie-breaker
 
+When you select a story, immediately move its file from `stories/refined/` to `stories/in-progress/` before starting any preparation or coding. Selected stories must not remain in `stories/refined/` once work begins.
+
 Do not pick:
 
 - stories in `stories/in-progress/` or `stories/done/`
 - planning-only epic stories unless explicitly requested
 
 ## 2) Prepare Before Coding
+
+Ensure the story file already lives in `stories/in-progress/` and reflects the planned work before writing code.
 
 For the chosen story:
 
@@ -55,6 +59,8 @@ If blocked by ambiguity:
   - acceptance criteria mapping
   - validation evidence from executed checks
 
+After the PR merges, move the story file from `stories/in-progress/` to `stories/done/` and update its status/frontmatter to `done`.
+
 ## 5) Validation and CI
 
 Run the required checks defined by the target repo's `AGENTS.md` and ensure they pass before opening or updating the PR.
@@ -75,7 +81,7 @@ When PR is ready, provide:
 ## 7) Completion State
 
 - PR opened is not done
-- Story is done only after PR review and merge per team workflow
+- Story is done only after PR review and merge per team workflow, and the corresponding story file must move from `stories/in-progress/` to `stories/done/` immediately afterward
 - If story file status or location changes are required, follow coordinator instructions exactly
 
 ## 8) Blocker Protocol

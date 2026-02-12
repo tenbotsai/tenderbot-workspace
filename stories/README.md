@@ -86,7 +86,7 @@ So that [benefit].
 1. **Reading stories**: Check `/refined/` for implementation-ready work
 2. **Getting context**: Read the entire story file for complete context
 3. **Asking questions**: If story is unrefined, ask for refinement before implementing
-4. **Updating status**: Update the story file as you progress through implementation
+4. **Updating status**: Move the story file from `/stories/refined/` to `/stories/in-progress/` as soon as you start work, keep its metadata aligned with the current phase, and after the PR merges move it to `/stories/done/` with `status: done`
 5. **Execution workflow**: Follow `stories/CODING_AGENT_EXECUTION_PROTOCOL.md` for ticket selection, implementation flow, PR handoff, and blocker escalation
 
 ## Current Stories
@@ -103,25 +103,24 @@ So that [benefit].
 8. **009-preserve-onboarding-chat-history.md** - Preserve chat messages across auth redirect
 9. **018-staging-e2e-contract-smoke-suite.md** - Add staging smoke checks for cross-system onboarding/billing/dashboard contracts
 
-### Refined (9)
+### Refined (8)
 
 1. **003-comprehensive-testing-strategy.md** - Parent epic with FE Vitest-first scope and sequencing
-2. **010-fe-testing-foundation-vitest.md** - Shared FE test utilities, fixtures, and mocking baseline
-3. **011-fe-onboarding-steps-1-5-vitest.md** - Implementation-ready Vitest coverage for onboarding early steps
-4. **012-fe-onboarding-steps-6-7-billing-vitest.md** - Implementation-ready coverage for onboarding completion and billing redirects
-5. **013-fe-dashboard-tabs-vitest.md** - Implementation-ready coverage for dashboard tab behavior
-6. **014-be-onboarding-api-contract-tests.md** - Contract tests for backend onboarding API chain used by FE
-7. **015-be-billing-checkout-confirmation-contract-tests.md** - Contract tests for billing checkout, confirm, status, and webhook behavior
-8. **016-be-dashboard-api-contract-tests.md** - Contract tests for dashboard-facing backend endpoints
-9. **017-be-test-fixtures-and-integration-harness-hardening.md** - Shared backend test fixtures and harness reliability improvements
+2. **011-fe-onboarding-steps-1-5-vitest.md** - Implementation-ready Vitest coverage for onboarding early steps
+3. **012-fe-onboarding-steps-6-7-billing-vitest.md** - Implementation-ready coverage for onboarding completion and billing redirects
+4. **013-fe-dashboard-tabs-vitest.md** - Implementation-ready coverage for dashboard tab behavior
+5. **014-be-onboarding-api-contract-tests.md** - Contract tests for backend onboarding API chain used by FE
+6. **015-be-billing-checkout-confirmation-contract-tests.md** - Contract tests for billing checkout, confirm, status, and webhook behavior
+7. **016-be-dashboard-api-contract-tests.md** - Contract tests for dashboard-facing backend endpoints
+8. **017-be-test-fixtures-and-integration-harness-hardening.md** - Shared backend test fixtures and harness reliability improvements
 
 ### In Progress (0)
 
 None yet
 
-### Done (0)
+### Done (1)
 
-None yet
+1. **010-fe-testing-foundation-vitest.md** - Shared FE test utilities, fixtures, and mocking baseline
 
 ## Prioritization
 

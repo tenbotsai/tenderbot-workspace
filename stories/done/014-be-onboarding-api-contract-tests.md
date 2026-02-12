@@ -1,12 +1,12 @@
 ---
 id: 014
 title: Backend Onboarding API Contract Tests
-status: refined
+status: done
 priority: high
 labels: [testing, backend, api, contract]
 estimate: medium
 created: 2026-02-11
-updated: 2026-02-11
+updated: 2026-02-12
 ---
 
 # User Story
@@ -32,11 +32,11 @@ Add/organize backend API-level tests that assert request and response contracts 
 
 # Acceptance Criteria
 
-- [ ] Contract tests assert expected request/response shapes for all endpoints in scope
-- [ ] Suggestion endpoints validate fallback behavior when LLM payloads are invalid
-- [ ] Alert profile and matches endpoints validate FE-consumed fields and types
-- [ ] Error payload semantics are asserted for representative failure paths
-- [ ] Tests run in existing backend test workflow (`mise run test`, `mise run test-integration` where relevant)
+- [x] Contract tests assert expected request/response shapes for all endpoints in scope
+- [x] Suggestion endpoints validate fallback behavior when LLM payloads are invalid
+- [x] Alert profile and matches endpoints validate FE-consumed fields and types
+- [x] Error payload semantics are asserted for representative failure paths
+- [x] Tests run in existing backend test workflow (`mise run test`, `mise run test-integration` where relevant)
 
 # Technical Context
 
