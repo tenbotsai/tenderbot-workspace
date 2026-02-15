@@ -1,6 +1,7 @@
 # Ignore child git repositories
 /backend/
 /signup/
+/infrastructure-tf/
 /remix-of-tenderbot-prototype/
 
 # Keep cache/build artifacts out
@@ -15,3 +16,10 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Terraform
+**/.terraform/
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/terraform.tfvars
+!**/.terraform.lock.hcl
