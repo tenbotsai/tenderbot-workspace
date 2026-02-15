@@ -1,6 +1,7 @@
 # Ignore child git repositories
 /backend/
 /signup/
+/infrastructure-tf/
 /remix-of-tenderbot-prototype/
 
 # Keep cache/build artifacts out
