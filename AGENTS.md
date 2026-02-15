@@ -28,3 +28,6 @@ Required behavior:
 - Create a feature branch and never commit directly to `main`.
 - Implement the story, run required checks, and raise a PR.
 - Report back with selected story, rationale, branch name, PR URL, acceptance criteria status, and checks run.
+
+## Infrastructure guardrails
+- Refer to `CLAUDE.md` for infrastructure guardrails and safety constraints before making infra or deployment changes.
