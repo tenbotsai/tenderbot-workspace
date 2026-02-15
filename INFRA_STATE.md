@@ -32,6 +32,11 @@
 
 ### Dokploy (http://tenderbot-prod-manager:3000/)
 - API key in Doppler: `DOKPLOY_API_KEY`
+
+### Prefect UI/API (Tailscale only)
+- Production: `http://tenderbot-prod-manager:4200`
+- Staging: `http://tenderbot-prod-manager:4201`
+- Ports are intentionally not exposed via Hetzner public firewall (tailnet access only)
 - Staging compose ID: `kyCh_dUXyobVAEDW1VF1x` (stack name: `compose-synthesize-virtual-monitor-79hauw`)
 - Prod compose ID: `K-O_kKAvZWp3OijqxUmZM`
 - GHCR registry configured: `ghcr.io`, user `dnshio`, PAT from Doppler `GHCR_PAT` ✓
